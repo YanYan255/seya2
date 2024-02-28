@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seya - Cheerful Companion AI</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image: url('https://image.freepik.com/free-vector/science-laboratory-interior_1284-26443.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #widget {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        border: none;
+        background-color: #4CAF50;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+
+<div id="widget">
+    <h1>Welcome to Seya - Your Cheerful Companion AI</h1>
+    <p>Click the buttons below to interact with Seya:</p>
+    <button id="adviceBtn">Advice</button>
+    <button id="cheerUpBtn">Cheer Up</button>
+    <div id="response"></div>
+</div>
+
+<script>
+    const adviceBtn = document.getElementById('adviceBtn');
+    const cheerUpBtn = document.getElementById('cheerUpBtn');
+    const responseDiv = document.getElementById('response');
+
+    adviceBtn.addEventListener('click', () => {
+        fetchAdvice();
+    });
+
+    cheerUpBtn.addEventListener('click', () => {
+        fetchCheerUp();
+    });
+
+    function fetchAdvice() {
+        const advice = "Remember, challenges are opportunities in disguise. Keep pushing forward!";
+        displayResponse(advice);
+    }
+
+    function fetchCheerUp() {
+        const cheerUpMessage = "Why did the robot go on a diet? Because it had too many bytes!";
+        displayResponse(cheerUpMessage);
+    }
+
+    function displayResponse(message) {
+        responseDiv.innerHTML = `<p>${message}</p>`;
+    }
+</script>
+
+</body>
+</html>
